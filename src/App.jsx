@@ -1,4 +1,5 @@
-import Home from "./pages/Home";
+import FormLog from "./pages/FormLog";
+import FormSign from "./pages/FormSign";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
       <div className="">
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<FormLog />} />
+            <Route path="/signUp" element={<FormSign />} />
           </Routes>
         </Router>
       </div>
