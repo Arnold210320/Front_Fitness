@@ -1,8 +1,8 @@
 import logo from "../assets/Me.jpg";
-import PhoneI from "../components/PhoneI";
-import PasswordI from "../components/PasswordI";
+import PhoneI from "../components/Forms/PhoneI";
+import PasswordI from "../components/Forms/PasswordI";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Photo from "../img/Bodybuilder.webp";
 
 export default function FormLog() {
@@ -16,10 +16,13 @@ export default function FormLog() {
     password: false,
   });
 
+  const navigate = useNavigate(); // Added useNavigate hook
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validationCheck()) {
       console.log("Formulaire soumis");
+      navigate("/dashbord"); // Navigate to Dashbord after form submission
     }
   };
 

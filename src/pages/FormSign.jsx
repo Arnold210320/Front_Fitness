@@ -1,9 +1,9 @@
 import logo from "../assets/Me.jpg";
-import PasswordL from "../components/PasswordL";
-import NameI from "../components/NameI";
-import InputGrid from "../components/InputGrid";
+import PasswordL from "../components/Forms/PasswordL";
+import NameI from "../components/Forms/NameI";
+import InputGrid from "../components/Forms/InputGrid";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Photo from "../img/Bodybuilder.webp";
 
 export default function FormSign() {
@@ -21,10 +21,13 @@ export default function FormSign() {
     email: false,
   });
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validationCheck()) {
       console.log("Formulaire soumis");
+      navigate("/");
     }
   };
 
