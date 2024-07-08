@@ -1,24 +1,41 @@
 import Line from "./Line";
 import Tarte from "./Tarte";
 import Gridd from "./Gridd";
+import SideBar from "../SideBar/Index";
+import NavBar from "../Navbar/Index";
+import { useState } from "react";
 
 export default function Dash() {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
     <>
-      <div className="p-4 sm:ml-[10rem]">
-        <div className="p-4 rounded-lg mt-14">
-          <div className="grid grid-cols-1 sm:flex sm:flex-row">
-            <div className="flex items-center justify-center rounded-lg bg-gray-50 mb-4 sm:mb-0 sm:mr-4 sm:w-[85%]">
-              <Line />
-            </div>
+      <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
+      {isOpen && <SideBar />}
+      <div className="rounded-lg md:mt-14 sm:mt-0">
+        <div className="flex flex-col sm:flex-row sm:w-[100vh]">
+          <div
+            className={`${
+              !isOpen
+                ? "rounded-2xl bg-gray-50 mb-4 mt-6 lg:ml-[2rem] sm:block hidden"
+                : "rounded-2xl bg-gray-50 mb-4 mt-6 lg:ml-[21rem] sm:ml-[2rem] sm:block hidden"
+            }`}
+          >
+            <Line />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 mt-8">
-            <div className="flex items-center justify-center rounded-lg bg-gray-50">
-              <Gridd />
-            </div>
-            <div className="flex items-center justify-center rounded">
-              <Tarte />
-            </div>
+        </div>
+        <div
+          className={`${
+            !isOpen
+              ? "grid grid-cols-1 sm:grid-cols-2 md:mb-4 md:mt-8 md:ml-[1rem] gap-8"
+              : "grid grid-cols-1 sm:grid-cols-2 md:mb-4 md:mt-8 lg:ml-[21rem] sm:ml-[1rem] gap-8"
+          }`}
+        >
+          <div className="rounded-2xl bg-gray-50 mt-4">
+            <Gridd />
+          </div>
+          <div className=" rounded-2xl flex items-center">
+            <Tarte />
           </div>
         </div>
       </div>

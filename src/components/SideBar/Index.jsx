@@ -1,5 +1,6 @@
 import logo from "../../assets/Me.jpg";
 import { Menu } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 import {
   LayoutDashboard,
@@ -43,10 +44,10 @@ export default function Index() {
         id="logo-sidebar"
         className={`fixed top-0 left-0 z-40 w-64 h-screen pt-4 transition-transform ${
           sidebarIsOpen ? "translate-x-0" : "-translate-x-full"
-        } bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-pink-50 dark:border-gray-50`}
+        } bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-blue-400 dark:border-blue-400`}
         aria-label="Sidebar"
       >
-        <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-pink-50">
+        <div className="h-full px-3 pb-4 overflow-y-auto bg-blue dark:bg-blue-400">
           <img
             className="rounded-lg w-[90px] h-[90px] ml-[30%] mb-4"
             src={logo}
@@ -54,22 +55,22 @@ export default function Index() {
           />
           <ul className="space-y-2 font-medium">
             <li>
-              <a
-                href="#"
+              <NavLink
+                href="/dashbord"
                 className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <LayoutDashboard />
                 <span className="flex-1 ms-3 whitespace-nowrap">Dashboard</span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href="#"
+              <NavLink
+                href="/customer"
                 className="flex items-center p-2  rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <Users />
                 <span className="flex-1 ms-3 whitespace-nowrap">Customer</span>
-              </a>
+              </NavLink>
             </li>
             <li>
               <a

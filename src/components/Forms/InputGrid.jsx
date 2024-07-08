@@ -38,10 +38,10 @@ export default function InputGrid({ inputState, setInputState, validation }) {
             }
             required
           />
-          {validation.phone && (
-            <p className="text-red-500">Numero de telephone invalide</p>
-          )}
         </div>
+        {validation.phone && (
+          <p className="text-red-500">Numero de telephone invalide</p>
+        )}
         <div className="flex items-center">
           <select
             id="account"

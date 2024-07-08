@@ -34,11 +34,6 @@ export default function PasswordI({ inputState, setInputState, validation }) {
             )}
           </button>
         </div>
-        {validation.password && (
-          <p className="text-red-500">
-            Mot de passe invalide : au moins un chiffre et 7 caractères
-          </p>
-        )}
       </div>
     </>
   );

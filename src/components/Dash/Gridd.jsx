@@ -1,6 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import Typography from "@mui/material/Typography";
 
 const VISIBLE_FIELDS = [
   "title",
@@ -25,24 +26,27 @@ export default function Gridd() {
 
   return (
     <>
-      <Box sx={{ height: 400, width: 1 }}>
-        <DataGrid
-          rows={data}
-          disableColumnFilter
-          disableColumnSelector
-          disableDensitySelector
-          columns={[
-            { field: "label", headerName: "Nom et prenom", width: 250 },
-            { field: "color", headerName: "Arrivee", width: 250 },
-          ]}
-          slots={{ toolbar: GridToolbar }}
-          slotProps={{
-            toolbar: {
-              showQuickFilter: true,
-            },
-          }}
-        />
-      </Box>
+      <Typography variant="h6" gutterBottom align="center">
+        Liste de presence
+        <Box sx={{ height: 400, width: 1 }}>
+          <DataGrid
+            rows={data}
+            disableColumnFilter
+            disableColumnSelector
+            disableDensitySelector
+            columns={[
+              { field: "label", headerName: "Nom et prenom", width: 250 },
+              { field: "color", headerName: "Arrivee", width: 250 },
+            ]}
+            slots={{ toolbar: GridToolbar }}
+            slotProps={{
+              toolbar: {
+                showQuickFilter: true,
+              },
+            }}
+          />
+        </Box>
+      </Typography>
     </>
   );
 }
