@@ -1,7 +1,6 @@
 import logo from "../../assets/Me.jpg";
 import { Menu } from "lucide-react";
 import { NavLink } from "react-router-dom";
-
 import {
   LayoutDashboard,
   Users,
@@ -56,7 +55,7 @@ export default function Index() {
           <ul className="space-y-2 font-medium">
             <li>
               <NavLink
-                href="/dashbord"
+                to="/dashbord"
                 className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <LayoutDashboard />
@@ -65,16 +64,16 @@ export default function Index() {
             </li>
             <li>
               <NavLink
-                href="/customer"
-                className="flex items-center p-2  rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                to="/customer"
+                className="flex items-center p-2  rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700  group "
               >
                 <Users />
-                <span className="flex-1 ms-3 whitespace-nowrap">Customer</span>
+                <span className="flex-1 ms-3 whitespace-nowrap ">Customer</span>
               </NavLink>
             </li>
             <li>
-              <a
-                href="#"
+              <NavLink
+                to="#"
                 className="flex items-center p-2  rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <Network />
@@ -84,7 +83,7 @@ export default function Index() {
                 <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
                   3
                 </span>
-              </a>
+              </NavLink>
             </li>
             <li>
               <button
@@ -105,20 +104,20 @@ export default function Index() {
                 }`}
               >
                 <li>
-                  <a
+                  <NavLink
                     href="#"
                     className="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group hover:bg-gray-100  dark:hover:bg-gray-700"
                   >
                     List
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
+                  <NavLink
                     href="#"
                     className="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group hover:bg-gray-100  dark:hover:bg-gray-700"
                   >
                     Exercise
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </li>
@@ -139,33 +138,33 @@ export default function Index() {
                 className={`py-2 space-y-2 ${dishIsOpen ? "block" : "hidden"}`}
               >
                 <li>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="/dish"
                     className="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group hover:bg-gray-100  dark:hover:bg-gray-700"
                   >
                     List
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
+                  <NavLink
                     href="#"
                     className="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group hover:bg-gray-100  dark:hover:bg-gray-700"
                   >
                     Categories
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
+                  <NavLink
                     href="#"
                     className="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     Attribution
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </li>
             <li>
-              <a
+              <NavLink
                 href="#"
                 className="flex items-center p-2  rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
@@ -173,16 +172,16 @@ export default function Index() {
                 <span className="flex-1 ms-3 whitespace-nowrap">
                   Assistance
                 </span>
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
+              <NavLink
                 href="#"
                 className="flex items-center p-2  rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <MessageCircleQuestion />
                 <span className="flex-1 ms-3 whitespace-nowrap">FAQ</span>
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>

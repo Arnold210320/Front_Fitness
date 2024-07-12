@@ -2,6 +2,8 @@ import FormLog from "./pages/FormLog";
 import FormSign from "./pages/FormSign";
 import Dashbord from "./pages/Dashbord";
 import Customer from "./pages/Customer";
+import Dish from "./pages/Dish";
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
             <Route path="/signUp" element={<FormSign />} />
             <Route path="/dashBord" element={<Dashbord />} />
             <Route path="/customer" element={<Customer />} />
+            <Route path="/dish" element={<Dish />} />
           </Routes>
         </Router>
       </div>

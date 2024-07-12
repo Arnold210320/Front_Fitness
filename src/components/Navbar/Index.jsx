@@ -1,5 +1,4 @@
 import { Menu, QrCode } from "lucide-react";
-import { useState } from "react";
 
 export default function Index({ isOpen, setIsOpen }) {
   return (
@@ -17,7 +16,10 @@ export default function Index({ isOpen, setIsOpen }) {
               <button
                 type="button"
                 className=""
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  toggle();
+                }}
               >
                 {isOpen ? (
                   <Menu color="white" size={40} />
